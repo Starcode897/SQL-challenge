@@ -1,10 +1,10 @@
 department 
 -
 dept_no VARCHAR PK
-dept_name VARCHAR(255)
+dept_name VARCHAR(500)
 
 
-dept_Emp
+dept_emp
 -
 emp_no INT PK FK >- employee.emp_no
 dept_no VARCHAR FK >- department.dept_no
@@ -12,5 +12,28 @@ dept_no VARCHAR FK >- department.dept_no
 
 employee
 -
-emp_no INT PK
-emp_title_id VARCHAR FK 
+emp_no INT PK 
+emp_title_id VARCHAR FK >- titles.title_id
+birth_date date
+first_name VARCHAR(500)
+last_name VARCHAR(500)
+sex VARCHAR
+hire_date date
+
+
+salaries
+-
+emp_no INT PK FK - employee.emp_no
+salary INT
+
+
+dept_manager
+-
+dept_no VARCHAR PK FK >- department.dept_no
+emp_no INT FK - employee.emp_no
+
+
+titles
+-
+title_id VARCHAR PK
+title VARCHAR(500)
