@@ -1,0 +1,16 @@
+department 
+-
+dept_no VARCHAR PK
+dept_name VARCHAR(255)
+
+
+dept_Emp
+-
+emp_no INT PK FK >- employee.emp_no
+dept_no VARCHAR FK >- department.dept_no
+
+
+employee
+-
+emp_no INT PK
+emp_title_id VARCHAR FK 
